@@ -5,8 +5,7 @@ Docker with Airflow + Postgres + Spark cluster
 ## The Containers
 
 - **airflow-webserver**: Airflow webserver and scheduler, with spark-submit support.
-  - image: `docker-airflow2:latest` (custom, Airflow version 2.2.4)
-    - Based on python:3.7-stretch, [puckel/docker-airflow](https://github.com/puckel/docker-airflow) and [cordon-thiago/airflow-spark](https://github.com/cordon-thiago/airflow-spark)
+  - image: `docker-airflow2:latest` (custom, Airflow version 2.10.2)
   - port: `8080`
 
 - **postgres**: Postgres database, used by Airflow.
@@ -14,11 +13,11 @@ Docker with Airflow + Postgres + Spark cluster
   - port: `5432`
 
 - **spark-master**: Spark Master.
-  - image: `bitnami/spark:3.2.1`
+  - image: `bitnami/spark:3.5.2`
   - port: `8081`
 
-- **spark-worker[-N]**: Spark workers (default number: 1). Modify `docker-compose.yml` file to add more.
-  - image: `bitnami/spark:3.2.1`
+- **spark-worker**: Spark workers (default number: 1). Modify `docker-compose.yml` file to add more.
+  - image: `bitnami/spark:3.5.2`
 
 ## 🔧 Setup
 
@@ -53,4 +52,3 @@ docker-compose up -d --build
 ### Test spark-submit from Airflow
 
 Go to the Airflow UI and run the `daily_script_run` DAG :)
-```
