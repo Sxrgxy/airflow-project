@@ -1,6 +1,4 @@
 logs/
-output_tmp/
-output/
 __pycache__/
 *.pyc
 *.log
