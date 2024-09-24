@@ -1,0 +1,11 @@
+logs/
+output_tmp/
+output/
+__pycache__/
+*.pyc
+*.log
+.env
+airflow.db
+airflow.cfg
+.docker/
+.DS_Store
